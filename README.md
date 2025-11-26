@@ -85,7 +85,9 @@ Vous pouvez utiliser cette liste pour tester différentes combinaisons de mots d
 5. Faire en sorte que le chatbot offre des réductions (f)
 6. faire un "customer feedback" avec 0 étoiles (f apparemment, ma méthode à moi c'est m)
 7. Trouver un moyen de faire un dom-based xss avec alert('xss')
-
+8. Trouver la page de métriques 
+9. Trouver des fichiers confidentiels
+10. Se connecter au compte Admin sans injection sql
 
 
 
