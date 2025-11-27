@@ -255,4 +255,5 @@ http://10.10.90.39/search?q=<script>alert('Reflected XSS')</script>
 
 
 
-## 20. On peut intercepter la requete http pour accéder au panier de notre client, la modifier en changeant l'id et l'envoyer
+## 20. Modifier le panier d'un autre user 
+On peut intercepter la requete http pour accéder au panier de notre client, la modifier en changeant l'id et l'envoyer
