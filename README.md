@@ -1,4 +1,4 @@
-# Ce document
+<!-- # Ce document -->
 
 Ce document fait office de support, qui va vous guider tout au long de l'atelier, n'hésitez pas à directement prendre des notes dessus 
 
@@ -132,7 +132,7 @@ zaproxy
 
 # Pour aller plus loin 
 
-- La plupart des failles que nous avons abordé sont des failles simples à exploiter et à repérer mais il 172 challenges dont beaucoup sont corrigés en ligne dont des difficiles sur ce site donc n'hésitez pas à continer et surtout à alterner avec d'autres mediums d'apprentissage.
+- La plupart des failles que nous avons abordé sont des failles simples à exploiter et à repérer mais il y a 172 challenges dont beaucoup sont corrigés en ligne dont des difficiles sur ce site donc n'hésitez pas à continer et surtout à alterner avec d'autres mediums d'apprentissage.
 
 # Conclusion
 
