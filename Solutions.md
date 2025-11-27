@@ -157,7 +157,7 @@ print("Raw bytes:", r.content)
 - simple ctrl+F redirect dans le main.js et on trouve la redirection vers le site de la crypto
 
 
-## 13 Suppimer les avis des utilisateurs
+## 13 Supprimer les avis des utilisateurs
 1. se connecter en tant qu'admin 
 2. aller sur /administration 
 
