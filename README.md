@@ -33,12 +33,12 @@ https://github.com/juice-shop/juice-shop?tab=readme-ov-file#setup
 - utilisez une l'instance publique : https://demo.owasp-juice.shop/ (prend du temps à démarrer et peut être instable, à utiliser en dernier recours)
 
 
+# Concepts clés
+Ils sont expliqués pendant l'atelier, faites vos recherche si vous n'êtes pas familiers
 
-
-# presentation de quelques failles
-c'est la plus value de l'atelier qui va vous donner des bases à adapter sur le site.
-
-
+- Les injections SQL
+- Les différentes requêtes http
+- Les attaques XSS
 
 # Guide proposé pour attaquer juice-shop  (Spoiler, pas nécessaire si vous êtes avancé ) 
 Les informations qui suivent sont essentielles si vous n'avez jamais exploité de vulnérabilités Web. 
