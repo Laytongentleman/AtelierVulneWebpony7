@@ -19,9 +19,10 @@ Les failles que l'on peut trouver dans Juice Shop incluent des attaques telles q
 - faites tourner Juice-Shop sur votre ordinateur en l'installant comme expliqué ici: 
 https://github.com/juice-shop/juice-shop?tab=readme-ov-file#setup
 0. choisissez l'installation docker elle marche mieux, bien qu'elle empeche certains challenge d'être validés ils ne nous concernent pas pour cet atelier
-1. installez docker: sudo apt-get install ou autre
-2. lancez docker run --rm -p 127.0.0.1:3000:3000 bkimminich/juice-shop
-3. l'application tourne au http://localhost:3000/ 
+1. installez docker: sudo apt-get install docker-compose
+2. lancez le daemon docker: sudo systemctl start docker
+3. lancez docker run --rm -p 127.0.0.1:3000:3000 bkimminich/juice-shop
+4. l'application tourne au http://localhost:3000/  (!) ne mettez pas de s au http
 
 - utilisez notre instance le temps de l'atelier: 
 
@@ -66,11 +67,34 @@ Dans le cadre de l'exploitation des vulnérabilités de Juice Shop, il est parfo
 
 Vous pouvez utiliser cette liste pour tester différentes combinaisons de mots de passe dans le cadre de vos tests de sécurité. Deux outils populaires pour ce type d'attaque sont **Hydra** et **Burp Suite**. Voici comment les utiliser :
 
-1. **Hydra** : Hydra est un outil en ligne de commande permettant de réaliser des attaques par force brute sur différents protocoles. Pour l'utiliser avec la liste `best1050.txt`, il suffit de spécifier l'URL de Juice Shop et le fichier de mots de passe comme paramètre.
 
-2. **Burp Suite** : Si vous préférez une solution graphique, vous pouvez également utiliser Burp Suite pour effectuer une attaque par brute force. En utilisant la fonctionnalité de **Repetitions** ou en configurant un **Intruder**, vous pouvez tester les mots de passe de la liste `best1050.txt` contre l'application Juice Shop.
+1. **Burp Suite** : Si vous préférez une solution graphique, vous pouvez également utiliser Burp Suite pour effectuer une attaque par brute force. En utilisant la fonctionnalité de **Repetitions** ou en configurant un **Intruder**, vous pouvez tester les mots de passe de la liste `best1050.txt` contre l'application Juice Shop.
 
-3. Il est tout à fait possible de faire son propre script.
+2. Il est tout à fait possible de faire son propre script.
+
+3. Hydra
+
+
+
+
+## Outils Recommandés
+
+### outils simples
+https://reqbin.com/ 
+pour les requetes http 
+
+https://beautifier.io/
+pour rendre le javascript lisible
+
+Burp Suite Community Edition
+
+### Outils pour aller plus loin
+
+Burp Suite Community Edition
+
+mitmproxy
+
+zaproxy
 
 
 # Quetes recommandées (Spoiler, à lire si vous êtes à un point mort et que vous ne trouvez pas/plus de failles à exploiter): 
