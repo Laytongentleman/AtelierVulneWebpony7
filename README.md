@@ -33,7 +33,9 @@ https://github.com/juice-shop/juice-shop?tab=readme-ov-file#setup
 
 
 
-# presentation de quelques failles 
+# presentation de quelques failles
+c'est la plus value de l'atelier qui va vous donner des bases à adapter sur le site.
+
 
 
 # Guide proposé pour attaquer juice-shop  (Spoiler, pas nécessaire si vous êtes avancé ) 
@@ -73,27 +75,39 @@ Vous pouvez utiliser cette liste pour tester différentes combinaisons de mots d
 
 # Quetes recommandées (Spoiler, à lire si vous êtes à un point mort et que vous ne trouvez pas/plus de failles à exploiter): 
 
-(!) on vous donne l'objectif mais faut souvent diviser en plusieurs étapes
-
-(f) facile, (m) moyen, (d) difficile
+(!) on vous donne l'objectif mais faut souvent diviser en plusieurs étapes, et des fois ce n'est pas évident, il faut juste se chercher partout sur le site 
 
 
-1. Trouvez la page du scoreboard (m)
-2. Faire renvoyer une erreur SQL imprévue (f)
-3. Exploiter une injection SQL pour se connecter en tant que Bender ou un autre utilisateur (f)
-4. Exploiter une injection SQL pour se connecter en tant qu'admin (f)
-5. Faire en sorte que le chatbot offre des réductions (f)
-6. faire un "customer feedback" avec 0 étoiles (f apparemment, ma méthode à moi c'est m)
+
+
+1. Trouvez la page du scoreboard 
+2. Faire renvoyer une erreur SQL imprévue 
+3. Exploiter une injection SQL pour se connecter en tant que Bender ou un autre utilisateur 
+4. Exploiter une injection SQL pour se connecter en tant qu'admin 
+5. Faire en sorte que le chatbot offre des réductions 
+6. faire un "customer feedback" avec 0 étoiles 
 7. Trouver un moyen de faire un dom-based xss avec alert('xss')
 8. Trouver la page de métriques 
 9. Trouver des fichiers confidentiels
-10. Se connecter au compte Admin sans injection sql
+10. faire s'afficher la photo du chat de Bjoern 
+11. Se connecter au compte Admin sans injection sql
+12. Réussir à se faire rediriger vers la page qui promeut leur crypto monnaie
+13. supprimer les avis des utilisateurs en tant qu'admin
+14. faire 10 customer feebacks en moins de 20 secondes
+15. télécharger le fichier package-lock.json.bak
+16. upload un fichier pdf 
+17. upload un fichier de plus de 100 kb
+18. XSS persistant
+19. XSS réfléchi
+20. Trouver un moyen d'accéder au panier d'un autre utilisateur 
+
+
 
 
 
 # Pour aller plus loin 
 
-- La plupart des failles que nous avons abordé sont des failles simples à exploiter et à repérer mais il 172 challenges dont des difficiles sur ce site donc n'hésitez pas à continer et surtout à alterner avec d'autres mediums d'apprentissage.
+- La plupart des failles que nous avons abordé sont des failles simples à exploiter et à repérer mais il 172 challenges dont beaucoup sont corrigés en ligne dont des difficiles sur ce site donc n'hésitez pas à continer et surtout à alterner avec d'autres mediums d'apprentissage.
 
 # Conclusion
 
