@@ -2,7 +2,8 @@
 
 Ce document fait office de support, qui va vous guider tout au long de l'atelier, n'hésitez pas à directement prendre des notes dessus 
 
-
+Retrouvez les anciens et prochains ateliers sur le salon pony7 du discord de net7 ou sur la page des événements:
+https://pony7.fr/evenements.html
 
 # Introduction
 
