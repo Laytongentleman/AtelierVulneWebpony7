@@ -62,7 +62,7 @@ On remarque simplement l'url et on se rend compte qu'il y a des # dans l'encodin
 On remplace les # par des %23 et on obtient l'url valide. C'est la valeur qu'on aurait eu si on avait encodé l'url avec encode l'url correctement.
 
 
-##11.
+## 11 Se connecter en admin via bruteforce
 
 
 ## Se connecter en admin par une méthode bruteforce 
@@ -157,13 +157,16 @@ print("Raw bytes:", r.content)
 - simple ctrl+F redirect dans le main.js et on trouve la redirection vers le site de la crypto
 
 
-## 13 
+## 13 Suppimer les avis des utilisateurs
 1. se connecter en tant qu'admin 
 2. aller sur /administration 
 
 
-## 
+## 14. faire 10 customer feebacks en moins de 20 secondes
+Faire comme la solution 6. et spammer les requetes avec le captcha adapté au captach id, pas besoin de changer l'id le serveur vérifie seulements que la réponse est la bonne pour l'id donné.
 
+## 15. télécharger le fichier package-lock.json.bak
+ 
 1. Analyser le problème de téléchargement
 
 Lorsque vous tentez de télécharger le fichier **`package.json.bak`** situé dans le répertoire **`/ftp/`**, vous obtenez une erreur **403 - Forbidden**, ce qui signifie que le serveur interdit l'accès à ce fichier. Le message d'erreur indique également que seuls les fichiers avec les extensions **.md** et **.pdf** sont autorisés au téléchargement.
@@ -208,25 +211,20 @@ Le Poison Null Byte est une technique puissante pour contourner les restrictions
 
 Cela illustre l'importance de vérifier et de sécuriser correctement les mécanismes de validation des fichiers et des entrées utilisateurs afin d'éviter des vulnérabilités telles que l'**exploitation de données sensibles**.
 
+## 16  upload un fichier qui n'est pas pdf
+on intercepte l'upload un fichier d'un autre type en aillant changé l'extension en pdf puis en interceptant avec burpsuite on peut changer l'extension
+## 17. upload un fichier de plus de 100 kb
+on intercepte l'upload un fichier de moins de 100kb puis on modifie son contenu en rajoutant de la donnée et on peut envoyer la requete.
 
-## 1. DOM-based XSS (XSS basé sur le Document Object Model)
 
-Le **DOM-based XSS** exploite l'environnement HTML et JavaScript côté client pour exécuter du code malveillant. Ce type d'attaque est déclenché lorsqu'une page web permet l'injection de données non filtrées dans le DOM (Document Object Model), souvent par l'intermédiaire des paramètres d'URL ou d'autres entrées de l'utilisateur.
+## 18. XSS persistant et 19. XSS réfléchi
+ 
 
-### Exemple d'attaque DOM XSS
-
-1. **Identifier la vulnérabilité** : Recherchez une page où des paramètres dans l'URL sont utilisés sans être correctement échappés dans le DOM. Par exemple, une page qui prend un paramètre tel que **`?user=<username>`** et l'affiche directement dans le DOM sans validation.
-   
-2. **Injection de JavaScript malveillant** : Vous pouvez injecter du JavaScript dans l'URL comme suit :
-http://10.10.90.39/page?user=<script>alert('XSS')</script>
-
-3. **Exécution du script malveillant** : Lorsque la page est chargée avec ce paramètre, le code JavaScript injecté sera exécuté dans le navigateur de la victime, déclenchant une alerte **`XSS`**.
-
-## 2. Persistent XSS (XSS persistant côté serveur)
+###  Persistent XSS (XSS persistant côté serveur)
 
 Le **Persistent XSS** (ou XSS stocké) se produit lorsque du code JavaScript malveillant est envoyé au serveur et stocké, puis exécuté chaque fois que la page contenant le script est consultée. Cela peut se produire lorsque les données envoyées par l'utilisateur (comme les commentaires d'un blog ou les messages d'un forum) ne sont pas correctement nettoyées avant d'être stockées.
 
-### Exemple d'attaque Persistent XSS
+#### Exemple d'attaque Persistent XSS
 
 1. **Identifier un champ de saisie vulnérable** : Cherchez un formulaire de soumission de données (comme un champ de commentaire, un champ de message, ou un champ de recherche) où l'utilisateur peut entrer du texte qui sera ensuite affiché sans validation ni nettoyage.
 
@@ -236,11 +234,11 @@ Le **Persistent XSS** (ou XSS stocké) se produit lorsque du code JavaScript mal
 
 3. **Accéder à la page contenant le script** : Après avoir soumis le commentaire, si la page qui affiche les commentaires n'échappe pas correctement le contenu, chaque utilisateur qui visite cette page verra le script exécuté automatiquement, affichant l'alerte **`Persistent XSS`**.
 
-## 3. Reflected XSS (XSS réfléchi côté client)
+### Reflected XSS (XSS réfléchi côté client)
 
 Le **Reflected XSS** se produit lorsque du code malveillant est injecté dans une page via une entrée utilisateur, mais la page est immédiatement renvoyée au client sans être correctement filtrée ou échappée. Cela se produit souvent lorsqu'un paramètre de recherche est renvoyé dans le résultat de la page, par exemple.
 
-### Exemple d'attaque Reflected XSS
+#### Exemple d'attaque Reflected XSS
 
 1. **Identifier un champ de recherche vulnérable** : Cherchez un formulaire de recherche ou un paramètre d'URL où vous pouvez soumettre des entrées qui sont ensuite directement affichées sur la page, sans validation appropriée.
 
@@ -250,26 +248,11 @@ http://10.10.90.39/search?q=<script>alert('Reflected XSS')</script>
 
 3. **Exécution du script malveillant** : Lorsque la page de résultats de recherche est renvoyée avec le paramètre **`q`**, le script malveillant est exécuté dans le navigateur de l'utilisateur, déclenchant l'alerte **`Reflected XSS`**.
 
-## Pourquoi ces attaques fonctionnent-elles ?
-
-- **DOM XSS** : L'attaque DOM XSS fonctionne lorsque le JavaScript côté client manipule directement les données fournies par l'utilisateur sans les valider, ce qui permet d'exécuter du code malveillant dans le contexte de la page.
-
+ ### Pourquoi ces attaques fonctionnent-elles ?
 - **Persistent XSS** : Cette attaque fonctionne lorsque le serveur accepte et stocke des données malveillantes (sans nettoyage) qui sont ensuite affichées pour tous les utilisateurs. Ainsi, le script malveillant est exécuté chaque fois que la page est visitée.
 
 - **Reflected XSS** : Cette attaque se produit lorsque les données fournies par l'utilisateur sont immédiatement réintégrées dans la page sans validation appropriée. Le script malveillant est exécuté dès que la page est renvoyée avec l'input de l'utilisateur.
 
-## Conclusion
-
-Ces trois types d'attaques XSS illustrent différentes façons dont un attaquant peut injecter et exécuter du JavaScript malveillant dans un site web. Chaque type d'attaque exploite une faille dans la gestion des données utilisateur, qu'il s'agisse de l'environnement HTML, du stockage côté serveur ou du traitement immédiat des données côté client.
-
-Les bonnes pratiques pour éviter les attaques XSS comprennent :
-- **Validation et échappement des entrées utilisateur** : Toujours valider et nettoyer les données envoyées par l'utilisateur avant de les utiliser dans l'application (que ce soit dans l'HTML, l'URL ou le code JavaScript).
-- **Utilisation des en-têtes de sécurité** : Mettre en place des en-têtes HTTP de sécurité tels que **Content-Security-Policy (CSP)** pour limiter le type de contenu JavaScript autorisé à s'exécuter.
-- **Encodage des données** : Lorsque vous affichez des données utilisateur, assurez-vous qu'elles sont correctement encodées pour empêcher l'exécution de code malveillant.
-
-Cela permet de protéger les utilisateurs contre l'exécution de scripts malveillants et de renforcer la sécurité des applications web.
 
 
-
-
-
+## 20. On peut intercepter la requete http pour accéder au panier de notre client, la modifier en changeant l'id et l'envoyer
